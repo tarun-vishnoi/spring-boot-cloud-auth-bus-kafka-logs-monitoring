@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: consumer
+  cloud:
+    config:
+      uri:
+      - http://localhost:8763/
+    
+server:
+  port: 0
