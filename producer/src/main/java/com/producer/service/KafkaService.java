@@ -13,6 +13,13 @@ public class KafkaService {
 	@Autowired
 	private KafkaPublisher kafkaPublisher;
 
+	/**
+	 * 
+	 * topic will have four partition and will be assigned as below :
+	 * 
+	 * 0 - Get, 1 - Post, 2 - Put, 3 - Delete.
+	 */
+
 	public void checkAction(RandomDataRO randomData, Action action) {
 		Integer partition = null;
 		String key = null;

@@ -12,6 +12,8 @@ import org.apache.kafka.clients.admin.ListTopicsResult;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
@@ -23,6 +25,8 @@ import com.producer.serialization.ObjectSerializer;
 
 @Configuration
 public class KafkaConfig {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(KafkaConfig.class);
 
 	@Bean
 	public void createTopicBean() throws InterruptedException, ExecutionException {
@@ -39,8 +43,11 @@ public class KafkaConfig {
 			NewTopic newTopic = new NewTopic("random-data-topic", partitions, replication);
 			topicList.add(newTopic);
 			admin.createTopics(topicList);
+			LOGGER.info("Topic random-data-topic created.");
+			LOGGER.debug("Topic random-data-topic created having partition " + partitions + " and replication factor "
+					+ replication + ".");
 		} else {
-			System.out.println(names.toString());
+			LOGGER.warn("Topic random-data-topic exists.");
 		}
 	}
 

@@ -15,7 +15,6 @@ public class RandomDataService {
 
 	public void saveRandomData(RandomDataRO randomDataRO) {
 		RandomData randomData = new RandomData();
-		randomData.setId(randomDataRO.getId());
 		randomData.setName(randomDataRO.getName());
 		randomData.setAge(randomDataRO.getAge());
 		randomData.setUuid(randomDataRO.getUuid());

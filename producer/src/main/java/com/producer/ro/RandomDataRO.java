@@ -8,7 +8,6 @@ import javax.validation.constraints.NotNull;
 
 public class RandomDataRO implements Serializable {
 
-	@NotNull(message = "Id can not be null.")
 	private Integer id;
 	private UUID uuid;
 	@NotNull(message = "Name can not be null.")

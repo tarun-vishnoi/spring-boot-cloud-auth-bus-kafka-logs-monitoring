@@ -37,7 +37,7 @@ public class KafkaPublisher {
 				LOGGER.info("KafkaPublisher :: Data sent successfully.");
 				LOGGER.debug("KafkaPublisher :: Topic : " + result.getRecordMetadata().topic() + ", Partition : "
 						+ result.getRecordMetadata().partition() + ", Offset : " + result.getRecordMetadata().offset()
-						+ ".");
+						+ ", Key : " + key + ".");
 			}
 
 			@Override
