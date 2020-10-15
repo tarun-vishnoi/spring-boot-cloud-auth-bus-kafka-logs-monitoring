@@ -32,8 +32,14 @@ management:
       exposure:
         include:
         - bus-refresh
-        - beans
-        - health
-        - routes
-        - httptrace
-        - mappings
+          beans
+          health
+          routes
+          httptrace
+          mappings
+
+logging:
+  file: E:/logs/config-server.log
+  level:
+    root: INFO
+    org.springframework.web: INFO
